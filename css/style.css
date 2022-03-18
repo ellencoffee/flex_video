@@ -29,6 +29,8 @@ main header {
   flex-wrap: wrap;
   justify-content: center;
   align-content: space-between;
+  position: relative;
+  z-index: 3;
 }
 main header h1 {
   color: #fff;
@@ -56,11 +58,14 @@ main section {
   height: 90%;
   padding-top: 10vh;
   display: flex;
+  position: relative;
+  z-index: 1;
 }
 main section article {
   flex: 1;
   transition: 0.5s;
   position: relative;
+  cursor: pointer;
 }
 main section article::before {
   content: "";
@@ -113,6 +118,7 @@ main section article .inner figure {
   overflow: hidden;
   position: relative;
   transition: 0.5s;
+  top: 0px;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
   filter: saturate(0.2);
 }
@@ -157,6 +163,52 @@ main nav ul li {
 main nav ul li a {
   font-size: 18px;
   color: #888;
+}
+main aside {
+  width: 75%;
+  height: 80vh;
+  background: #333;
+  position: absolute;
+  top: 0px;
+  left: -100%;
+  z-index: 2;
+  padding: 5vw;
+  padding-left: 20%;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  transition: 1s;
+}
+main aside:on {
+  opacity: 1;
+  left: 0%;
+}
+main aside .txtBox {
+  width: 25%;
+}
+main aside .txtBox h2 {
+  font: normal 120px/1 "alegreya sans sc";
+  color: #ddd;
+  margin-bottom: 30px;
+}
+main aside .txtBox p {
+  font: 18px/1.2 "arial";
+  color: #777;
+}
+main aside .vidBox {
+  width: 72%;
+  padding-top: 150px;
+}
+main aside .vidBox video {
+  width: 100%;
+}
+main aside .btnClose {
+  position: absolute;
+  top: 19vh;
+  right: 5vw;
+  font: 16px/1 "arial";
+  color: #ffe924;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
